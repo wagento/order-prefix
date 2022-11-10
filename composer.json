@@ -1,0 +1,21 @@
+{
+    "name": "wagento/prefixer",
+    "description": "This extension allow user to add prefix to all order entities, like order, shipment, invoice and creditmemo",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "version": "1.0.0",
+    "require": {
+        "php": "~7.3.0||~7.4.0||~8.0",
+        "magento/framework": "~100.0.4"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wagento\\Prefix\\": ""
+        }
+    }
+}
