@@ -4,10 +4,32 @@ namespace Wagento\Prefix\Observer;
 class OrderPrefix implements \Magento\Framework\Event\ObserverInterface
 {
 
+    /**
+     * Observer for event
+     *
+     * @var \Magento\Framework\App\RequestInterface
+     */
     protected $request;
+
+    /**
+     * @var \Wagento\Prefix\Model\TypeFactory
+     */
     protected $typeModel;
+
+    /**
+     *
+     * @var \Wagento\Prefix\Model\StoreFactory
+     *
+     */
     protected $storeModel;
 
+    /**
+     * OrderPrefix Constructor
+     *
+     * @param \Wagento\Prefix\Model\TypeFactory $typeModel
+     * @param \Wagento\Prefix\Model\StoreFactory $storeModel
+     * @param \Magento\Framework\App\RequestInterface $request
+     */
     public function __construct(
         \Wagento\Prefix\Model\TypeFactory $typeModel,
         \Wagento\Prefix\Model\StoreFactory $storeModel,
@@ -18,6 +40,11 @@ class OrderPrefix implements \Magento\Framework\Event\ObserverInterface
         $this->storeModel = $storeModel;
     }
 
+    /**
+     * Order Prefix execute function
+     *
+     * @param \Magento\Framework\Event\Observer $observer
+     */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $postValue = $this->request->getParams();
